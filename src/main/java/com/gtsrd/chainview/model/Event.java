@@ -4,9 +4,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 
-import java.time.Instant;
+import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Data
@@ -24,13 +25,15 @@ public class Event {
     private String symbol;
     private String timeframe;
     private String action_type;
-    private Float close_price;
+    private BigDecimal close_price;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
-    private Date event_timestamp;
+    private String event_timestamp;
 
     @PrePersist
     private void onCreate() {
-        event_timestamp = new Date();
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
+        event_timestamp = dateFormat.format(date);
     }
 }

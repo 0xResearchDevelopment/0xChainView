@@ -5,7 +5,7 @@ CREATE TABLE chainviewdb.`chain_event_data` (
   `timeframe` varchar(50) DEFAULT NULL,
   `action_type` varchar(50) DEFAULT NULL,
   `close_price` decimal(10,10) DEFAULT NULL,
-  `event_timestamp` datetime(3) DEFAULT NULL,
+  `event_timestamp` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`event_id`)
 )
 

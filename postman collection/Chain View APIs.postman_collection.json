@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"platform\": \"BSC\",\r\n    \"symbol\": \"MATICBTC\",\r\n    \"timeframe\": \"15m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.000035678\r\n}",
+					"raw": "{\r\n    \"platform\": \"ASC\",\r\n    \"symbol\": \"DOGE\",\r\n    \"timeframe\": \"25m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.000045674\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,6 +48,63 @@
 						"localhost"
 					],
 					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"events",
+						"eventsRetrive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event Capture - Cloud",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"platform\": \"CSC\",\r\n    \"symbol\": \"BITCOIN\",\r\n    \"timeframe\": \"35m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.00004444\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/v1/events/eventCapture",
+					"protocol": "http",
+					"host": [
+						"chainview",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"events",
+						"eventCapture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Event Retrive - Cloud",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/v1/events/eventsRetrive",
+					"protocol": "http",
+					"host": [
+						"chainview",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
 					"path": [
 						"api",
 						"v1",
