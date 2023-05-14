@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Chain View System</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<br>
+<br>
+<div class = "container">
+    <div class = "row">
+        <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class = "text-center"> Create New Event </h1>
+            <div class = "card-body">
+                <form th:action="@{/events}" th:object = "${event}" method="POST">
+
+                    <div class ="form-group">
+                        <label> Platform </label>
+                        <input
+                                type = "text"
+                                name = "platform"
+                                th:field = "*{platform}"
+                                class = "form-control"
+                                placeholder="Enter Platform"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Symbol </label>
+                        <input
+                                type = "text"
+                                name = "symbol"
+                                th:field = "*{symbol}"
+                                class = "form-control"
+                                placeholder="Enter Symbol"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Timeframe </label>
+                        <input
+                                type = "text"
+                                name = "timeframe"
+                                th:field = "*{timeframe}"
+                                class = "form-control"
+                                placeholder="Enter Timeframe"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Action Type </label>
+                        <input
+                                type = "text"
+                                name = "action_type"
+                                th:field = "*{action_type}"
+                                class = "form-control"
+                                placeholder="Enter Action Type"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Close Price </label>
+                        <input
+                                type = "text"
+                                name = "email"
+                                th:field = "*{close_price}"
+                                class = "form-control"
+                                placeholder="Enter Close Price"
+                        />
+                    </div>
+
+                    <div class = "box-footer">
+                        <button type="submit" class = "btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

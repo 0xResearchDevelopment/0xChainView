@@ -23,4 +23,5 @@ public class EventController {
     public List<Event> retriveEvents() {
         return eventService.getEvents();
     }
+
 }
