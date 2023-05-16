@@ -28,7 +28,7 @@
 				<a class="nav-link" th:href="@{/events}">Event Management</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" th:href="@{/user/registration}">User Management</a>
+				<a class="nav-link" th:href="@{/user-registration}">User Management</a>
 			</li>
 		</ul>
 	</div>
@@ -41,18 +41,18 @@
 			<div class = "col-md-6 col-md-offset-3">
 				
 				<h1> User Login Page </h1>
-				<form th:action="@{/user/login}" method="post" th:object="${userObj}">
-					
+				<form th:action="@{/user-login}" method="post" th:object="${userObj}">
+
 					<!-- error message -->
-					<div th:if="${param.error}">
+					<div th:if="${abortLogin}">
 						<div class="alert alert-danger">Invalid username or
 							password.</div>
 					</div>
 				
 					<!-- logout message -->
-					<div th:if="${param.logout}">
+					<!--<div th:if="${param.logout}">
 						<div class="alert alert-info">You have been logged out.</div>
-					</div>
+					</div>-->
 					
 					<div class = "form-group">
 						<label for ="email"> Email </label> :
@@ -76,7 +76,7 @@
 					</div>
 				</form>
 				<div class="form-group">
-						<span>New user? <a href="/" th:href="@{/user/registration}">Register
+						<span>New user? <a href="/" th:href="@{/user-registration}">Register
 								here</a></span>
 				</div>
 			</div>

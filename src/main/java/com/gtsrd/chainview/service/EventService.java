@@ -4,6 +4,7 @@ import com.gtsrd.chainview.model.Event;
 import com.gtsrd.chainview.repository.EventRepository;
 import com.gtsrd.chainview.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

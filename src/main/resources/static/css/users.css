@@ -1,0 +1,21 @@
+.container{
+    width:100%;
+    max-width:1100px;
+}
+
+.container table {
+    width:100%;
+}
+
+.marginTop{
+    margin-top: 10px;
+}
+
+#userTable thead tr th{
+    background-color: #000;
+    color: #fff;
+}
+
+#userTable_filter{
+    margin-bottom: 5px;
+}

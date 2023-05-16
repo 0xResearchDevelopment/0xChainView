@@ -26,7 +26,7 @@
 				<a class="nav-link" th:href="@{/events}">Event Management</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" th:href="@{/user/registration}">User Management</a>
+				<a class="nav-link" th:href="@{/user-registration}">User Management</a>
 			</li>
 		</ul>
 	</div>
@@ -39,7 +39,7 @@
 			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
 				<h1 class = "text-center"> Update User </h1>
 				<div class = "card-body">
-					<form th:action="@{/user/update/{id} (id=${user.user_id})}" th:object = "${user}" method="POST">
+					<form th:action="@{/user-update/{id} (id=${user.user_id})}" th:object = "${user}" method="POST">
 						<div class ="form-group">
 
 						<div class ="form-group">
@@ -90,7 +90,8 @@
 						<div class ="form-group">
 							<label> Phone </label>
 							<input
-									type = "text"
+									type="tel"
+									pattern="[0-9]{10}"
 									name = "phone"
 									th:field = "*{phone}"
 									class = "form-control"
@@ -112,7 +113,7 @@
 						<div class ="form-group">
 							<label> DOB </label>
 							<input
-									type = "text"
+									type="date"
 									name = "dob"
 									th:field = "*{dob}"
 									class = "form-control"

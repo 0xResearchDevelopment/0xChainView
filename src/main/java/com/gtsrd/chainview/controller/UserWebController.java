@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Objects;
 
 @Controller
-@RequestMapping("/user")
+//@RequestMapping("/user")
 public class UserWebController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/registration")
+	@GetMapping("/user-registration")
 	public String showRegistrationForm(Model model) {
 		// create event object to hold event form data
 		UserRegistrationDto userObj = new UserRegistrationDto();
@@ -26,43 +26,52 @@ public class UserWebController {
 		return "registration";
 	}
 	
-	@PostMapping("/register")
-	public String registerUserAccount(@ModelAttribute("userObj") UserRegistrationDto registrationDto) {
-		userService.save(registrationDto);
-		return "redirect:/user/login";
+	@PostMapping("/user-register")
+	public String registerUserAccount(@ModelAttribute("userObj") UserRegistrationDto registrationDto, Model model) {
+		User registeredUser = userService.checkIfRegisteredUser(registrationDto.getEmail());
+
+		if(Objects.nonNull(registeredUser)){
+			model.addAttribute("abortRegister",true);
+			return "registration";
+		}
+		else {
+			userService.save(registrationDto);
+			return "redirect:/user-login";
+		}
 	}
 
-	@GetMapping("/login")
+	@GetMapping("/user-login")
 	public String showLoginForm() {
 		// create event object to hold event form data
 		return "login";
 	}
 
-	@PostMapping("/login")
-	public String loginUser(@ModelAttribute("userObj") UserLoginDto loginDto) {
+	@PostMapping("/user-login")
+	public String loginUser(@ModelAttribute("userObj") UserLoginDto loginDto, Model model) {
 		User loggedInUser = userService.login(loginDto.getEmail(),loginDto.getPassword());
 
 		if(Objects.nonNull(loggedInUser)){
-			return "redirect:/user/list";
+			return "redirect:/user-list";
 		}
 		else {
-			return "redirect:/user/login";
+			model.addAttribute("abortLogin",true);
+			return "login";
 		}
 	}
 
-	@GetMapping("/list")
+	@GetMapping("/user-list")
 	public String listUsers(Model model) {
 		model.addAttribute("users", userService.getAllUsers());
 		return "users";
 	}
 
-	@GetMapping("/edit/{id}")
+	@GetMapping("/user-edit/{id}")
 	public String editUserForm(@PathVariable int id, Model model) {
 		model.addAttribute("user", userService.getUserById(id));
 		return "edit_user";
 	}
 
-	@PostMapping("/update/{id}")
+	@PostMapping("/user-update/{id}")
 	public String updateUser(@PathVariable int id,
 								@ModelAttribute("user") User user,
 								Model model) {
@@ -79,13 +88,13 @@ public class UserWebController {
 
 		// save updated student object
 		userService.updateUser(existingUser);
-		return "redirect:/user/list";
+		return "redirect:/user-list";
 	}
 
-	@GetMapping("/delete/{id}")
+	@GetMapping("/user-delete/{id}")
 	public String deleteUser(@PathVariable int id) {
 		userService.deleteUserById(id);
-		return "redirect:/user/list";
+		return "redirect:/user-list";
 	}
 
 }

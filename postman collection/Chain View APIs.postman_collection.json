@@ -6,114 +6,368 @@
 	},
 	"item": [
 		{
-			"name": "Event Capture - Local",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"platform\": \"ASC\",\r\n    \"symbol\": \"DOGE\",\r\n    \"timeframe\": \"25m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.000045674\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Event Management",
+			"item": [
+				{
+					"name": "Event Capture - Local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"platform\": \"A1A\",\r\n    \"symbol\": \"A1A1\",\r\n    \"timeframe\": \"25m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.10000001112\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/events/eventCapture",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"events",
+								"eventCapture"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:9090/api/v1/events/eventCapture",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "9090",
-					"path": [
-						"api",
-						"v1",
-						"events",
-						"eventCapture"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Events Retrive - Local",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:9090/api/v1/events/eventsRetrive",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "9090",
-					"path": [
-						"api",
-						"v1",
-						"events",
-						"eventsRetrive"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Event Capture - Cloud",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"platform\": \"CSC\",\r\n    \"symbol\": \"BITCOIN\",\r\n    \"timeframe\": \"35m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.00004444\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Events Retrive - Local",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/events/eventsRetrive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"events",
+								"eventsRetrive"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/v1/events/eventCapture",
-					"protocol": "http",
-					"host": [
-						"chainview",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"events",
-						"eventCapture"
-					]
+				{
+					"name": "Event Capture - Cloud",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"platform\": \"CSC\",\r\n    \"symbol\": \"BITCOIN\",\r\n    \"timeframe\": \"35m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.00004444\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/v1/events/eventCapture",
+							"protocol": "http",
+							"host": [
+								"chainview",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events",
+								"eventCapture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event Retrive - Cloud",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/v1/events/eventsRetrive",
+							"protocol": "http",
+							"host": [
+								"chainview",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events",
+								"eventsRetrive"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Event Retrive - Cloud",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/v1/events/eventsRetrive",
-					"protocol": "http",
-					"host": [
-						"chainview",
-						"us-east-2",
-						"elasticbeanstalk",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"events",
-						"eventsRetrive"
-					]
+			"name": "User Management",
+			"item": [
+				{
+					"name": "RetriveAllUsers - Local",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/user/retriveAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"retriveAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetriveUserByUserId - Local",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/user/retriveById/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"retriveById",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetriveUserByEmail - Local",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/user/retriveByEmail/sadish.v@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"retriveByEmail",
+								"sadish.v@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterUser - Local",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Sachin\",\r\n    \"lastname\": \"Tendulkar\",\r\n    \"gender\": \"M\",\r\n    \"location\": \"Mumbai\",\r\n    \"dob\": \"14-05-1981\",\r\n    \"phone\":\"9894526888\",\r\n    \"email\":\"sachin.t@gmail.com\",\r\n    \"password\":\"sachin123\",\r\n    \"client_id\":null,\r\n    \"display_name\":null,\r\n    \"status\":null,\r\n    \"created_ts\":null,\r\n    \"updated_ts\":null,\r\n    \"notes\":null,\r\n    \"roles\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser - Local",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/user/delete/29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"delete",
+								"29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetriveAllUsers - Cloud",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/user/retriveAll",
+							"protocol": "http",
+							"host": [
+								"chainview",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"retriveAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetriveUserByUserId - Cloud",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/user/retriveById/17",
+							"protocol": "http",
+							"host": [
+								"chainview",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"retriveById",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RetriveUserByEmail - Cloud",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/user/retriveByEmail/sadish.v@gmail.com",
+							"protocol": "http",
+							"host": [
+								"chainview",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"retriveByEmail",
+								"sadish.v@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterUser - Cloud",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Sachin\",\r\n    \"lastname\": \"Tendulkar\",\r\n    \"gender\": \"M\",\r\n    \"location\": \"Mumbai\",\r\n    \"dob\": \"14-05-1981\",\r\n    \"phone\":\"9894526888\",\r\n    \"email\":\"sachin.t@gmail.com\",\r\n    \"password\":\"sachin123\",\r\n    \"client_id\":null,\r\n    \"display_name\":null,\r\n    \"status\":null,\r\n    \"created_ts\":null,\r\n    \"updated_ts\":null,\r\n    \"notes\":null,\r\n    \"roles\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/user/register",
+							"protocol": "http",
+							"host": [
+								"chainview",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser - Cloud",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://chainview.us-east-2.elasticbeanstalk.com/api/user/delete/31",
+							"protocol": "http",
+							"host": [
+								"chainview",
+								"us-east-2",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"delete",
+								"31"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

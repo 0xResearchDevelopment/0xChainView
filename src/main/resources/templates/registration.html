@@ -26,7 +26,7 @@
 				<a class="nav-link" th:href="@{/events}">Event Management</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" th:href="@{/user/registration}">User Management</a>
+				<a class="nav-link" th:href="@{/user-registration}">User Management</a>
 			</li>
 		</ul>
 	</div>
@@ -39,66 +39,80 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 
+				<!-- error message -->
+				<div th:if="${abortRegister}">
+					<div class="alert alert-danger">User Already Registered.</div>
+				</div>
+
 				<!-- success message -->
-				<div th:if="${param.success}">
+<!--				<div th:if="${param.success}">
 					<div class="alert alert-info">You've successfully registered
 						to Chain View app!</div>
-				</div>
+				</div>-->
 
 				<h1>User Registration</h1>
 
-				<form th:action="@{/user/register}" method="post" th:object="${userObj}">
+				<form th:action="@{/user-register}" method="post" th:object="${userObj}">
 					<div class="form-group">
 						<label class="control-label" for="firstname"> First Name </label>
 						<input id="firstname" class="form-control" th:field="*{firstname}"
-							required autofocus="autofocus" />
+							   placeholder="Enter First Name"
+							   required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
 						<label class="control-label" for="lastname"> Last Name </label> <input
 							id="lastname" class="form-control" th:field="*{lastname}"
+							placeholder="Enter Last Name"
 							required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
 						<label class="control-label" for="gender"> Gender </label> <input
 							id="gender" class="form-control" th:field="*{gender}"
+							placeholder="Enter Gender"
 							required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
-						<label class="control-label" for="gender"> Phone </label> <input
-							id="phone" class="form-control" th:field="*{phone}"
+						<label class="control-label" for="phone"> Phone </label> <input
+							id="phone" type="tel" pattern="[0-9]{10}" class="form-control" th:field="*{phone}"
+							placeholder="Enter 10 digit phone number"
 							required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
-						<label class="control-label" for="gender"> Location </label> <input
+						<label class="control-label" for="location"> Location </label> <input
 							id="location" class="form-control" th:field="*{location}"
+							placeholder="Enter Location"
 							required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
-						<label class="control-label" for="gender"> DOB </label> <input
-							id="dob" class="form-control" th:field="*{dob}"
+						<label class="control-label" for="dob"> DOB </label> <input
+							id="dob" type="date" class="form-control" th:field="*{dob}"
 							required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
 						<label class="control-label" for="email"> Email </label> <input
-							id="email" class="form-control" th:field="*{email}" required
-							autofocus="autofocus" />
+							type="text" pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$"
+							id="email" class="form-control" th:field="*{email}"
+							placeholder="Enter Email"
+							required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
 						<label class="control-label" for="password"> Password </label> <input
 							id="password" class="form-control" type="password"
-							th:field="*{password}" required autofocus="autofocus" />
+							th:field="*{password}"
+							placeholder="Enter Password"
+							required autofocus="autofocus" />
 					</div>
 
 					<div class="form-group">
 						<button type="submit" class="btn btn-success">Register</button>
-						<span>Already registered? <a href="/" th:href="@{/user/login}">Login
+						<span>Already registered? <a href="/" th:href="@{/user-login}">Login
 								here</a></span>
 					</div>
 				</form>

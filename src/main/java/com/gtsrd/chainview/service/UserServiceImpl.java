@@ -34,6 +34,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public User checkIfRegisteredUser(String email) {
+		User user = userRepository.findByEmail(email);
+		return user;
+	}
+
+	@Override
 	public List<User> getAllUsers() {
 		return userRepository.findAll();
 	}
@@ -57,8 +63,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void deleteUserById(int id) {
+	public String deleteUserById(int id) {
 		userRepository.deleteById(id);
+		return "User deleted !! " + id;
 	}
 
 }

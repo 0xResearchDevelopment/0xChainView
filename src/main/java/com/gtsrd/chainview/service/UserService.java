@@ -12,11 +12,13 @@ public interface UserService {
 
 	User login(String email, String password);
 
+	User checkIfRegisteredUser(String email);
+
 	List<User> getAllUsers();
 
 	User getUserById(int id);
 
 	ApiResponse updateUser(User user);
 
-	void deleteUserById(int id);
+	String deleteUserById(int id);
 }
