@@ -10,6 +10,28 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Chain View System</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/events}">Event Management</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/user/registration}">User Management</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <br>
 <br>
 <div class = "container">
@@ -17,7 +39,7 @@
         <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
             <h1 class = "text-center"> Create New Event </h1>
             <div class = "card-body">
-                <form th:action="@{/events}" th:object = "${event}" method="POST">
+                <form th:action="@{/createEvent}" th:object = "${event}" method="POST">
 
                     <div class ="form-group">
                         <label> Platform </label>
@@ -27,6 +49,7 @@
                                 th:field = "*{platform}"
                                 class = "form-control"
                                 placeholder="Enter Platform"
+                                required autofocus="autofocus"
                         />
                     </div>
 
@@ -38,6 +61,7 @@
                                 th:field = "*{symbol}"
                                 class = "form-control"
                                 placeholder="Enter Symbol"
+                                required autofocus="autofocus"
                         />
                     </div>
 
@@ -49,6 +73,7 @@
                                 th:field = "*{timeframe}"
                                 class = "form-control"
                                 placeholder="Enter Timeframe"
+                                required autofocus="autofocus"
                         />
                     </div>
 
@@ -60,6 +85,7 @@
                                 th:field = "*{action_type}"
                                 class = "form-control"
                                 placeholder="Enter Action Type"
+                                required autofocus="autofocus"
                         />
                     </div>
 
@@ -71,6 +97,7 @@
                                 th:field = "*{close_price}"
                                 class = "form-control"
                                 placeholder="Enter Close Price"
+                                required autofocus="autofocus"
                         />
                     </div>
 

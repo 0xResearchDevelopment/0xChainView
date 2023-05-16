@@ -13,14 +13,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class EventWebController {
     @Autowired
     private EventService eventService;
+
     @GetMapping("/events")
     public String listEvents(Model model) {
         model.addAttribute("events", eventService.getEvents());
         return "events";
     }
 
-    @GetMapping("/addEvents")
-    public String createEvents(Model model) {
+    @GetMapping("/addEvent")
+    public String showAddEventForm(Model model) {
 
         // create event object to hold event form data
         Event event = new Event();
@@ -28,7 +29,7 @@ public class EventWebController {
         return "create_event";
     }
 
-    @PostMapping("/events")
+    @PostMapping("/createEvent")
     public String saveEvent(@ModelAttribute("event") Event event) {
         eventService.saveChainEvent(event);
         return "redirect:/events";
