@@ -22,10 +22,10 @@ public class UserServiceImpl implements UserService {
 		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
 		var current_timestamp = dateFormat.format(date);
 
-		String firstname = registrationDto.getFirstname().length() > 3 ? registrationDto.getFirstname().substring(0,3) : registrationDto.getFirstname();
-		String lastname = registrationDto.getLastname().length() > 3 ? registrationDto.getLastname().substring(0,3) : registrationDto.getLastname();
-		String clientId = firstname + lastname + registrationDto.getDob().substring(2,4) + registrationDto.getDob().substring(5,7);
-		String display_name = firstname + lastname ;
+		String firstnameFormatted = registrationDto.getFirstname().length() > 3 ? registrationDto.getFirstname().substring(0,3) : registrationDto.getFirstname();
+		String lastnameFormatted = registrationDto.getLastname().length() > 3 ? registrationDto.getLastname().substring(0,3) : registrationDto.getLastname();
+		String clientId = firstnameFormatted + lastnameFormatted + current_timestamp.substring(8,10) + current_timestamp.substring(3,5);
+		String display_name = firstnameFormatted + lastnameFormatted ;
 
 
 		User user = new User(registrationDto.getFirstname(),
@@ -76,10 +76,6 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public ApiResponse updateUser(User user) {
-	/*	User updatedUser = new User(user.getFirstname(),
-				user.getLastname(),user.getGender(), user.getPhone(),
-				user.getLocation(),user.getDob());
-		userRepository.save(updatedUser);*/
 		userRepository.save(user);
 		ApiResponse apiResponse = new ApiResponse();
 		apiResponse.setMessage("User Updated successfully!");

@@ -89,7 +89,6 @@ public class UserWebController {
 		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
 		var current_timestamp = dateFormat.format(date);
 
-
 		// get student from database by id
 		User existingUser = userService.getUserById(id);
 		existingUser.setFirstname(user.getFirstname());
@@ -100,7 +99,7 @@ public class UserWebController {
 		existingUser.setLocation(user.getLocation());
 		existingUser.setEmail(user.getEmail());
 		existingUser.setUpdated_ts(current_timestamp);
-		existingUser.setClient_id(user.getFirstname() + user.getLastname() + user.getDob().substring(2,4) + user.getDob().substring(5,7));
+		existingUser.setClient_id(user.getFirstname().substring(0,3) + user.getLastname().substring(0,3) + current_timestamp.substring(8,10) + current_timestamp.substring(3,5));
 
 		// save updated student object
 		userService.updateUser(existingUser);

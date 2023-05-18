@@ -29,7 +29,6 @@ public class User {
 	private String created_ts;
 	private String updated_ts;
 	private String notes;
-	private String role;
 
 	public User(String firstname, String lastname, String gender, String password, String email, String phone,
                 String location, String dob, String client_id,  String display_name, String status, String created_ts, String updated_ts) {
