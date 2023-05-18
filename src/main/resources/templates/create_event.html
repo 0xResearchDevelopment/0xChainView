@@ -79,14 +79,18 @@
 
                     <div class ="form-group">
                         <label> Action Type </label>
-                        <input
+                        <Select
                                 type = "text"
                                 name = "action_type"
                                 th:field = "*{action_type}"
                                 class = "form-control"
                                 placeholder="Enter Action Type"
                                 required autofocus="autofocus"
-                        />
+                        >
+                            <option th:value="select" th:text="Select-Action-Type" selected disabled></option>
+                            <option  th:value="B" th:text="B"></option>
+                            <option  th:value="S" th:text="S"></option>
+                        </Select>
                     </div>
 
                     <div class ="form-group">

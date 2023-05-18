@@ -32,7 +32,7 @@ public class User {
 	private String role;
 
 	public User(String firstname, String lastname, String gender, String password, String email, String phone,
-                String location, String dob) {
+                String location, String dob, String client_id,  String display_name, String status, String created_ts, String updated_ts) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -42,6 +42,11 @@ public class User {
 		this.phone = phone;
 		this.location = location;
 		this.dob = dob;
+		this.client_id = client_id;
+		this.display_name = display_name;
+		this.status = status;
+		this.created_ts = created_ts;
+		this.updated_ts = updated_ts;
 	}
 
 	public User(String firstname, String lastname, String gender, String phone,

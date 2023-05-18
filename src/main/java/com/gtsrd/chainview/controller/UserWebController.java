@@ -10,6 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 @Controller
@@ -61,6 +64,12 @@ public class UserWebController {
 
 	@GetMapping("/user-list")
 	public String listUsers(Model model) {
+		model.addAttribute("users", userService.getActiveUsers());
+		return "users";
+	}
+
+	@GetMapping("/all-user-list")
+	public String listAllUsers(Model model) {
 		model.addAttribute("users", userService.getAllUsers());
 		return "users";
 	}
@@ -76,6 +85,11 @@ public class UserWebController {
 								@ModelAttribute("user") User user,
 								Model model) {
 
+		Date date = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
+		var current_timestamp = dateFormat.format(date);
+
+
 		// get student from database by id
 		User existingUser = userService.getUserById(id);
 		existingUser.setFirstname(user.getFirstname());
@@ -85,6 +99,8 @@ public class UserWebController {
 		existingUser.setPhone(user.getPhone());
 		existingUser.setLocation(user.getLocation());
 		existingUser.setEmail(user.getEmail());
+		existingUser.setUpdated_ts(current_timestamp);
+		existingUser.setClient_id(user.getFirstname() + user.getLastname() + user.getDob().substring(2,4) + user.getDob().substring(5,7));
 
 		// save updated student object
 		userService.updateUser(existingUser);
@@ -92,8 +108,13 @@ public class UserWebController {
 	}
 
 	@GetMapping("/user-delete/{id}")
-	public String deleteUser(@PathVariable int id) {
-		userService.deleteUserById(id);
+	public String deleteUser(@PathVariable int id,@ModelAttribute("user") User user) {
+		User existingUser = userService.getUserById(id);
+		existingUser.setStatus("Deleted");
+
+		// save updated student object
+		userService.updateUser(existingUser);
+//		userService.deleteUserById(id);
 		return "redirect:/user-list";
 	}
 

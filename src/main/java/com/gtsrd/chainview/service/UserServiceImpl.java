@@ -7,7 +7,9 @@ import com.gtsrd.chainview.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -16,10 +18,21 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public ApiResponse save(UserRegistrationDto registrationDto) {
+		Date date = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
+		var current_timestamp = dateFormat.format(date);
+
+		String firstname = registrationDto.getFirstname().length() > 3 ? registrationDto.getFirstname().substring(0,3) : registrationDto.getFirstname();
+		String lastname = registrationDto.getLastname().length() > 3 ? registrationDto.getLastname().substring(0,3) : registrationDto.getLastname();
+		String clientId = firstname + lastname + registrationDto.getDob().substring(2,4) + registrationDto.getDob().substring(5,7);
+		String display_name = firstname + lastname ;
+
+
 		User user = new User(registrationDto.getFirstname(),
 				registrationDto.getLastname(),registrationDto.getGender(),
 				registrationDto.getPassword(), registrationDto.getEmail(),
-				registrationDto.getPhone(),registrationDto.getLocation(),registrationDto.getDob());
+				registrationDto.getPhone(),registrationDto.getLocation(),registrationDto.getDob(),
+				clientId, display_name, "Active",current_timestamp, null );
 
 		userRepository.save(user);
 		ApiResponse apiResponse = new ApiResponse();
@@ -40,10 +53,21 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public List<User> getActiveUsers() {
+		List<User> userRep = userRepository.findAll();
+		List<User> filteredData = new ArrayList<>();
+		for(User user : userRep){
+			if(user.getStatus().equals("Active")){
+				filteredData.add(user);
+			}
+		}
+		return filteredData;
+	}
+
+	@Override
 	public List<User> getAllUsers() {
 		return userRepository.findAll();
 	}
-
 
 	@Override
 	public User getUserById(int id) {

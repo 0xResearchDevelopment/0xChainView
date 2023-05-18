@@ -14,6 +14,8 @@ public interface UserService {
 
 	User checkIfRegisteredUser(String email);
 
+	List<User> getActiveUsers();
+
 	List<User> getAllUsers();
 
 	User getUserById(int id);

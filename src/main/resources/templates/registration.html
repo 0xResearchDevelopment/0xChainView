@@ -68,10 +68,15 @@
 					</div>
 
 					<div class="form-group">
-						<label class="control-label" for="gender"> Gender </label> <input
+						<label class="control-label" for="gender"> Gender </label> <select
 							id="gender" class="form-control" th:field="*{gender}"
-							placeholder="Enter Gender"
-							required autofocus="autofocus" />
+							placeholder="Select Gender"
+							required autofocus="autofocus">
+								<option th:value="select" th:text="Select-Gender" selected disabled></option>
+								<option  th:value="Male" th:text="Male"></option>
+								<option  th:value="Female" th:text="Female"></option>
+								<option  th:value="Others" th:text="Others"></option>
+						</select>
 					</div>
 
 					<div class="form-group">
