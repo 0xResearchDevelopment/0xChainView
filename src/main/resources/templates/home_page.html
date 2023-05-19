@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+    <title>Chain View System</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="" th:href="@{/css/events.css}">
+</head>
+<body>
+<div>
+  <div class="text-center p-3 mb-5 bg-dark text-white">
+    <h1 class="display2">Chain View System</h1>
+  </div>
+  <div class="text-center p-3 mb-5 ">
+    <h1 class="display4">Welcome!</h1>
+  </div>
+  <div class="container mt-5 align-items-center">
+    <div class="row">
+      <div class="col text-center">
+        <h2 class="display4 mb-3" >Event Management</h2>
+        <div class="list-group">
+          <a th:href="@{/events}" class="list-group-item list-group-item-action list-group-item-dark">Event List</a>
+          <a th:href="@{/addEvent}" class="list-group-item list-group-item-action list-group-item-dark">Event Registration</a>
+        </div>
+      </div>
+      <div class="col text-center">
+        <h2 class="display4 mb-3">User Management</h2>
+        <div class="list-group">
+          <a th:href="@{/user-list}" class="list-group-item list-group-item-action list-group-item-dark">User List</a>
+          <a th:href="@{/user-login}" class="list-group-item list-group-item-action list-group-item-dark">User Login</a>
+          <a th:href="@{/user-registration}" class="list-group-item list-group-item-action list-group-item-dark">User Registration</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

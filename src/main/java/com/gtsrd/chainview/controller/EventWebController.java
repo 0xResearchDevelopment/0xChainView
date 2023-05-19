@@ -34,4 +34,9 @@ public class EventWebController {
         eventService.saveChainEvent(event);
         return "redirect:/events";
     }
+
+    @GetMapping("/")
+    public String homePage() {
+        return "home_page";
+    }
 }
