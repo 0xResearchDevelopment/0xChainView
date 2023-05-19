@@ -4,19 +4,17 @@ CREATE TABLE chainviewdb.`users` (
   `firstname` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL,
   `display_name` varchar(50) DEFAULT NULL,
-  `gender` varchar(1) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
   `password` varchar(500) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `phone` int DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
   `location` varchar(50) DEFAULT NULL,
   `dob` varchar(20) DEFAULT NULL,
-  `status` varchar(1) DEFAULT NULL,
-  `created_ts` datetime(3) DEFAULT NULL,
-  `updated_ts` datetime(3) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `created_ts` varchar(100) DEFAULT NULL,
+  `updated_ts` varchar(100) DEFAULT NULL,
   `notes` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 )
 
 ALTER TABLE chainviewdb.`users` AUTO_INCREMENT=101;
-
-

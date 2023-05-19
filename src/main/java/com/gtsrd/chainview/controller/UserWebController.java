@@ -2,7 +2,6 @@ package com.gtsrd.chainview.controller;
 
 import com.gtsrd.chainview.dto.UserLoginDto;
 import com.gtsrd.chainview.dto.UserRegistrationDto;
-import com.gtsrd.chainview.model.Event;
 import com.gtsrd.chainview.model.User;
 import com.gtsrd.chainview.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,6 @@ import java.util.Date;
 import java.util.Objects;
 
 @Controller
-//@RequestMapping("/user")
 public class UserWebController {
 	@Autowired
 	private UserService userService;
