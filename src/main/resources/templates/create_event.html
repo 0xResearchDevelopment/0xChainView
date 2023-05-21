@@ -92,8 +92,7 @@
                                 th:field = "*{action_type}"
                                 class = "form-control"
                                 placeholder="Enter Action Type"
-                                required autofocus="autofocus"
-                        >
+                                required autofocus="autofocus">
                             <option th:value="select" th:text="Select-Action-Type" selected disabled></option>
                             <option  th:value="B" th:text="B"></option>
                             <option  th:value="S" th:text="S"></option>
@@ -104,10 +103,94 @@
                         <label> Close Price </label>
                         <input
                                 type = "text"
-                                name = "email"
+                                name = "close_price"
                                 th:field = "*{close_price}"
                                 class = "form-control"
                                 placeholder="Enter Close Price"
+                                required autofocus="autofocus"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Enter Price </label>
+                        <input
+                                type = "text"
+                                name = "enter_price"
+                                th:field = "*{enter_price}"
+                                class = "form-control"
+                                placeholder="Enter 'Enter Price'"
+                                required autofocus="autofocus"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Exit Price </label>
+                        <input
+                                type = "text"
+                                name = "exit_price"
+                                th:field = "*{exit_price}"
+                                class = "form-control"
+                                placeholder="Enter Exit Price"
+                                required autofocus="autofocus"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> P&L Ratio V1 </label>
+                        <input
+                                type = "text"
+                                name = "pnl_ratio_v1"
+                                th:field = "*{pnl_ratio_v1}"
+                                class = "form-control"
+                                placeholder="Enter P&L Ratio V1"
+                                required autofocus="autofocus"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Trade No </label>
+                        <input
+                                type = "text"
+                                name = "trade_no"
+                                th:field = "*{trade_no}"
+                                class = "form-control"
+                                placeholder="Enter Trade No"
+                                required autofocus="autofocus"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> P&L Value </label>
+                        <input
+                                type = "text"
+                                name = "pnl_value"
+                                th:field = "*{pnl_value}"
+                                class = "form-control"
+                                placeholder="Enter P&L Value"
+                                required autofocus="autofocus"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Currency </label>
+                        <input
+                                type = "text"
+                                name = "currency"
+                                th:field = "*{currency}"
+                                class = "form-control"
+                                placeholder="Enter Currency"
+                                required autofocus="autofocus"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Base Currency </label>
+                        <input
+                                type = "text"
+                                name = "base_currency"
+                                th:field = "*{base_currency}"
+                                class = "form-control"
+                                placeholder="Enter Base Currency"
                                 required autofocus="autofocus"
                         />
                     </div>
@@ -118,7 +201,6 @@
                         </button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

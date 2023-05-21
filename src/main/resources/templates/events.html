@@ -55,13 +55,21 @@
     <table id="eventTable" class="table table-striped">
         <thead>
         <tr>
-            <th> Event Id</th>
-            <th> Platform</th>
+            <th> Event Id </th>
+            <th> Platform </th>
             <th> Symbol </th>
             <th> Timeframe </th>
-            <th> Action Type</th>
-            <th> Close Price</th>
-            <th> Event Timestamp </th>
+            <th> Action Type </th>
+            <th> Close Price </th>
+            <th> Enter Price </th>
+            <th> Exit Price </th>
+            <th> P&L Ratio V1 </th>
+            <th> Trade No </th>
+            <th> Trade Time </th>
+            <th> P&L Value </th>
+         <!--   <th> Currency </th>
+            <th> Base Currency </th>-->
+
         </tr>
         </thead>
         <tbody>
@@ -72,7 +80,14 @@
             <td th:text = "${event.timeframe}"></td>
             <td th:text = "${event.action_type}"></td>
             <td th:text = "${event.close_price}"></td>
-            <td th:text = "${event.event_timestamp}"></td>
+            <td th:text = "${event.enter_price}"></td>
+            <td th:text = "${event.exit_price}"></td>
+            <td th:text = "${event.pnl_ratio_v1}"></td>
+            <td th:text = "${event.trade_no}"></td>
+            <td th:text = "${event.trade_time}"></td>
+            <td th:text = "${event.pnl_value}"></td>
+<!--            <td th:text = "${event.currency}"></td>
+            <td th:text = "${event.base_currency}"></td>-->
         </tr>
         </tbody>
     </table>

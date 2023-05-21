@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"platform\": \"A1A\",\r\n    \"symbol\": \"A1A1\",\r\n    \"timeframe\": \"25m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.10000001112\r\n}",
+							"raw": "{\r\n        \"platform\": \"WAZIRX8\",\r\n        \"symbol\": \"DOGE8\",\r\n        \"timeframe\": \"13m\",\r\n        \"action_type\": \"B\",\r\n        \"close_price\": 0.00003226,\r\n        \"enter_price\": 0.00003228,\r\n        \"exit_price\": 0.00003227,\r\n        \"pnl_ratio_v1\": 0.03097,\r\n        \"trade_no\": 309,\r\n        \"pnl_value\": 0.00000001,\r\n        \"currency\": \"BTC\",\r\n        \"base_currency\": \"MATIC\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,7 +68,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"platform\": \"CSC\",\r\n    \"symbol\": \"BITCOIN\",\r\n    \"timeframe\": \"35m\",\r\n    \"action_type\": \"B\",\r\n    \"close_price\": 0.00004444\r\n}",
+							"raw": "{\r\n        \"platform\": \"WAZIRX\",\r\n        \"symbol\": \"DOGE\",\r\n        \"timeframe\": \"11m\",\r\n        \"action_type\": \"B\",\r\n        \"close_price\": 0.00003226,\r\n        \"enter_price\": 0.00003228,\r\n        \"exit_price\": 0.00003227,\r\n        \"pnl_ratio_v1\": 0.03097,\r\n        \"trade_no\": 309,\r\n        \"pnl_value\": 0.00000001,\r\n        \"currency\": \"BTC\",\r\n        \"base_currency\": \"MATIC\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

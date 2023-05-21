@@ -25,15 +25,22 @@ public class Event {
     private String symbol;
     private String timeframe;
     private String action_type;
-    private BigDecimal close_price;
+    private String close_price;
+    private String enter_price;
+    private String exit_price;
+    private String pnl_ratio_v1;
+    private int trade_no;
+    private String pnl_value;
+    private String currency;
+    private String base_currency;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
-    private String event_timestamp;
-
+    private String trade_time;
     @PrePersist
     private void onCreate() {
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
-        event_timestamp = dateFormat.format(date);
+        trade_time = dateFormat.format(date);
     }
 }
