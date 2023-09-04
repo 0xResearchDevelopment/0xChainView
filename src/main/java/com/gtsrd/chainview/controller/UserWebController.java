@@ -41,7 +41,7 @@ public class UserWebController {
 		}
 	}
 
-	@GetMapping("/user-login")
+	@GetMapping("/")
 	public String showLoginForm() {
 		// create event object to hold event form data
 		return "login";
@@ -52,7 +52,7 @@ public class UserWebController {
 		User loggedInUser = userService.login(loginDto.getEmail(),loginDto.getPassword());
 
 		if(Objects.nonNull(loggedInUser)){
-			return "redirect:/user-list";
+			return "redirect:/home";
 		}
 		else {
 			model.addAttribute("abortLogin",true);

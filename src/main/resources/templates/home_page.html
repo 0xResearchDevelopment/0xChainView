@@ -10,9 +10,18 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="" th:href="@{/css/events.css}">
+<!--  <link rel="stylesheet" type="text/css" href="" th:href="@{/css/events.css}">-->
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="" th:href="@{/css/dashboard.css}">
+
 </head>
-<body>
+<!--<body>
 <div>
   <div class="text-center p-3 mb-5 bg-dark text-white">
     <h1 class="display2">Chainview</h1>
@@ -33,12 +42,178 @@
         <h2 class="display4 mb-3">User Management</h2>
         <div class="list-group">
           <a th:href="@{/user-list}" class="list-group-item list-group-item-action list-group-item-dark">User List</a>
-          <a th:href="@{/user-login}" class="list-group-item list-group-item-action list-group-item-dark">User Login</a>
+          <a th:href="@{/}" class="list-group-item list-group-item-action list-group-item-dark">User Login</a>
           <a th:href="@{/user-registration}" class="list-group-item list-group-item-action list-group-item-dark">User Registration</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+</body>-->
+
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Chainview</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/events}">Event Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/user-list}">User Management</a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container marginTop">
+ <!-- <div class="topbar">
+    <div class="logo">
+      <h2>Chainview</h2><br>
+    </div>
+    <div class="search">
+      <input type="text" name="search" placeholder="search here">
+      <label for="search"><i class="fas fa-search"></i></label>
+    </div>
+    <i class="fas fa-bell"></i>
+    <div class="user">
+      <img src="img/user.png" alt="">
+    </div>
+  </div>-->
+
+
+  <div class = "row">
+    <div class ="col-sm-3">
+      <div class="sidebar">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fas fa-th-large"></i>
+              <div>Dashboard</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-user-graduate"></i>
+              <div>Students</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <div>Teachers</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-users"></i>
+              <div>Employees</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-chart-bar"></i>
+              <div>Analytics</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-hand-holding-usd"></i>
+              <div>Earnings</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-cog"></i>
+              <div>Settings</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-question"></i>
+              <div>Help</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class ="col-sm-9">
+      <div class="main">
+        <div class="cards">
+          <div class="card">
+            <div class="card-content">
+              <div class="number">1217</div>
+              <div class="card-name">Students</div>
+            </div>
+            <div class="icon-box">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <div class="number">42</div>
+              <div class="card-name">Teachers</div>
+            </div>
+            <div class="icon-box">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <div class="number">68</div>
+              <div class="card-name">Employees</div>
+            </div>
+            <div class="icon-box">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <div class="number">$4500</div>
+              <div class="card-name">Earnings</div>
+            </div>
+            <div class="icon-box">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+          </div>
+        </div>
+        <div class="charts">
+          <div class="chart">
+            <h2>Earnings (past 12 months)</h2>
+            <div>
+              <canvas id="lineChart"></canvas>
+            </div>
+          </div>
+          <div class="chart doughnut-chart">
+            <h2>Employees</h2>
+            <div>
+              <canvas id="doughnut"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script type="text/javascript" src="" th:src="@{js/chart1.js}"></script>
+<script type="text/javascript" src="" th:src="@{js/chart2.js}"></script>
 </body>
+
 </html>

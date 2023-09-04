@@ -35,7 +35,7 @@ public class EventWebController {
         return "redirect:/events";
     }
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String homePage() {
         return "home_page";
     }
